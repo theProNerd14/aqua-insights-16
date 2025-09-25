@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useAuth } from "@/hooks/useAuth";
 import blueInsightsLogo from "@/assets/blue-insights-logo.png";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,12 +49,42 @@ export const Navigation = () => {
 
           <div className="flex items-center space-x-4">
             <ModeToggle />
-            <Button variant="ghost" className="hidden md:inline-flex">
-              Sign In
-            </Button>
-            <Button className="bg-gradient-ocean hover:shadow-ocean transition-all">
-              Get Started
-            </Button>
+            {user ? (
+              <>
+                <span className="hidden md:inline-flex text-sm text-muted-foreground">
+                  {user.email}
+                </span>
+                <Button 
+                  variant="ghost" 
+                  className="hidden md:inline-flex"
+                  onClick={() => signOut()}
+                >
+                  Sign Out
+                </Button>
+                <Button 
+                  className="bg-gradient-ocean hover:shadow-ocean transition-all"
+                  onClick={() => navigate('/research-portal')}
+                >
+                  Dashboard
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button 
+                  variant="ghost" 
+                  className="hidden md:inline-flex"
+                  onClick={() => navigate('/auth')}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  className="bg-gradient-ocean hover:shadow-ocean transition-all"
+                  onClick={() => navigate('/auth')}
+                >
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
