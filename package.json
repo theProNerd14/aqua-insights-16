@@ -10,7 +10,8 @@
     "deploy": "npx gh-pages -d dist"
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "homepage": "https://thepronerd14.github.io/aqua-insights-16"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
