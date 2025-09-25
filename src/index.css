@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ocean-inspired color palette */
+    --background: 210 33% 98%;
+    --foreground: 209 61% 16%;
+
+    --card: 210 25% 97%;
+    --card-foreground: 209 61% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 209 61% 16%;
+
+    /* Deep ocean blue */
+    --primary: 209 95% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Bioluminescent teal */
+    --secondary: 186 72% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 209 40% 40%;
+
+    /* Coral accent */
+    --accent: 14 89% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 31% 91%;
+    --input: 210 31% 91%;
+    --ring: 209 95% 38%;
+
+    --radius: 0.75rem;
+    
+    /* Custom ocean gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(209 95% 38%), hsl(186 72% 45%));
+    --gradient-depth: linear-gradient(180deg, hsl(209 95% 25%), hsl(209 95% 38%), hsl(186 72% 45%));
+    --gradient-surface: linear-gradient(135deg, hsl(186 72% 45% / 0.1), hsl(209 95% 38% / 0.05));
+    --gradient-coral: linear-gradient(135deg, hsl(14 89% 62%), hsl(22 89% 67%));
+    
+    /* Shadows */
+    --shadow-ocean: 0 20px 40px -10px hsl(209 95% 38% / 0.3);
+    --shadow-depth: 0 10px 30px -5px hsl(209 95% 25% / 0.4);
+    --shadow-glow: 0 0 40px hsl(186 72% 45% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Enhanced dark ocean theme */
+    --background: 215 28% 5%;
+    --foreground: 186 72% 85%;
+
+    --card: 215 25% 8%;
+    --card-foreground: 186 72% 85%;
+
+    --popover: 215 25% 8%;
+    --popover-foreground: 186 72% 85%;
+
+    /* Bioluminescent primary */
+    --primary: 186 72% 55%;
+    --primary-foreground: 215 28% 5%;
+
+    /* Deep teal secondary */
+    --secondary: 195 70% 20%;
+    --secondary-foreground: 186 72% 85%;
+
+    --muted: 215 20% 12%;
+    --muted-foreground: 186 30% 65%;
+
+    /* Coral accent for dark mode */
+    --accent: 14 89% 62%;
+    --accent-foreground: 215 28% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 186 72% 85%;
+
+    --border: 215 20% 15%;
+    --input: 215 20% 12%;
+    --ring: 186 72% 55%;
+
+    /* Enhanced dark gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(186 72% 35%), hsl(209 95% 25%), hsl(186 72% 45%));
+    --gradient-depth: linear-gradient(180deg, hsl(215 28% 5%), hsl(195 70% 15%), hsl(186 72% 25%));
+    --gradient-surface: linear-gradient(135deg, hsl(186 72% 25% / 0.2), hsl(209 95% 15% / 0.1));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(186 72% 45% / 0.3), hsl(186 72% 25% / 0.1), transparent);
+    --gradient-aurora: linear-gradient(45deg, hsl(186 72% 45% / 0.3), hsl(270 60% 50% / 0.2), hsl(14 89% 62% / 0.3));
+
+    /* Enhanced shadows with glow effects */
+    --shadow-ocean: 0 20px 60px -10px hsl(186 72% 45% / 0.4);
+    --shadow-depth: 0 10px 40px -5px hsl(195 70% 20% / 0.6);
+    --shadow-glow: 0 0 60px hsl(186 72% 45% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(186 72% 45% / 0.2);
+
+    --sidebar-background: 215 25% 8%;
+    --sidebar-foreground: 186 72% 85%;
+    --sidebar-primary: 186 72% 55%;
+    --sidebar-primary-foreground: 215 28% 5%;
+    --sidebar-accent: 215 20% 12%;
+    --sidebar-accent-foreground: 186 72% 85%;
+    --sidebar-border: 215 20% 15%;
+    --sidebar-ring: 186 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  /* Dark mode enhanced visuals */
+  .dark-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .dark-card-glow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+  
+  .gradient-aurora {
+    background: var(--gradient-aurora);
+  }
+  
+  .dark-enhanced-border {
+    @apply border border-primary/30 dark:border-primary/50;
+  }
+  
+  .dark-floating {
+    @apply dark:shadow-[0_0_40px_hsl(var(--primary)/0.2)] dark:border-primary/30;
+  }
+  
+  .dark-pulse {
+    animation: dark-pulse 3s ease-in-out infinite;
+  }
+  
+  .dark-shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .dark-shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes dark-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}
