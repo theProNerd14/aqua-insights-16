@@ -15,7 +15,7 @@ export const Footer = () => {
 
           
 
-          <div>
+          <div className="px-[130px]">
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm text-muted-foreground py-px">
               
