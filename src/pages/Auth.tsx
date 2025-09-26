@@ -9,6 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
+import { ContactModal } from '@/components/ContactModal';
 import blueInsightsLogo from '@/assets/blue-insights-logo.png';
 
 const authSchema = z.object({
@@ -21,6 +22,7 @@ type AuthFormData = z.infer<typeof authSchema>;
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const { user, signUp, signIn, loading } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -172,23 +174,46 @@ const Auth = () => {
             </Form>
 
             <div className="mt-6 text-center text-sm">
-              <span className="text-muted-foreground">
-                {isSignUp ? 'Already have an account?' : "Don't have an account?"}
-              </span>
-              <Button
-                variant="link"
-                className="p-0 ml-1 h-auto font-semibold text-primary"
-                onClick={() => {
-                  setIsSignUp(!isSignUp);
-                  form.reset();
-                }}
-              >
-                {isSignUp ? 'Sign In' : 'Sign Up'}
-              </Button>
+              {!isSignUp && (
+                <div>
+                  <span className="text-muted-foreground">
+                    Need help?{" "}
+                  </span>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto font-semibold text-primary"
+                    onClick={() => setContactOpen(true)}
+                  >
+                    Contact Us
+                  </Button>
+                </div>
+              )}
+              {isSignUp && (
+                <div className="mt-2">
+                  <span className="text-muted-foreground">
+                    Already have an account?{" "}
+                  </span>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto font-semibold text-primary"
+                    onClick={() => {
+                      setIsSignUp(false);
+                      form.reset();
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
       </div>
+      
+      <ContactModal 
+        open={contactOpen} 
+        onOpenChange={setContactOpen} 
+      />
     </div>
   );
 };

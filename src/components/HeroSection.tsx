@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/ocean-hero.jpg";
+import { ExplorePlatformModal } from "@/components/ExplorePlatformModal";
 export const HeroSection = () => {
   const navigate = useNavigate();
+  const [explorePlatformOpen, setExplorePlatformOpen] = useState(false);
   
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -44,7 +47,11 @@ export const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="bg-gradient-ocean hover:shadow-ocean transition-all transform hover:scale-105">
+          <Button 
+            size="lg" 
+            className="bg-gradient-ocean hover:shadow-ocean transition-all transform hover:scale-105"
+            onClick={() => setExplorePlatformOpen(true)}
+          >
             Explore Platform
           </Button>
           <Button 
@@ -80,5 +87,10 @@ export const HeroSection = () => {
           <path fill="hsl(var(--background))" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z" />
         </svg>
       </div>
+
+      <ExplorePlatformModal 
+        open={explorePlatformOpen} 
+        onOpenChange={setExplorePlatformOpen} 
+      />
     </section>;
 };

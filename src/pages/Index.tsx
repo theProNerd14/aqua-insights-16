@@ -5,6 +5,7 @@ import { MissionSection } from "@/components/MissionSection";
 import { MethodologySection } from "@/components/MethodologySection";
 import { DataPreview } from "@/components/DataPreview";
 import { SpeciesShowcase } from "@/components/SpeciesShowcase";
+import { IntelligentDataTheory } from "@/components/IntelligentDataTheory";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
       <HeroSection />
       <FeaturesSection />
       <MissionSection />
+      <IntelligentDataTheory />
       <MethodologySection />
       <DataPreview />
       <SpeciesShowcase />

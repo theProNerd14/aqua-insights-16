@@ -39,12 +39,18 @@ export const Navigation = () => {
             <a href="#mission" className="text-foreground/80 hover:text-primary transition-colors">
               Mission
             </a>
-            <a href="#data" className="text-foreground/80 hover:text-primary transition-colors">
+            <a href="#intelligent-data" className="text-foreground/80 hover:text-primary transition-colors">
               Data Insights
             </a>
             <a href="#species" className="text-foreground/80 hover:text-primary transition-colors">
               Species
             </a>
+            <Link to="/data-collection" className="text-foreground/80 hover:text-primary transition-colors">
+              Data Collection
+            </Link>
+            <Link to="/research-portal" className="text-foreground/80 hover:text-primary transition-colors">
+              Research Portal
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">

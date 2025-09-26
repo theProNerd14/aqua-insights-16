@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Database } from "lucide-react";
-import { ScheduleDemoModal } from "@/components/ScheduleDemoModal";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -45,23 +44,14 @@ export const CTASection = () => {
                 </Button>
               </>
             ) : (
-              <>
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-ocean hover:shadow-ocean transition-all transform hover:scale-105 group"
-                  onClick={() => navigate('/auth')}
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <ScheduleDemoModal 
-                  trigger={
-                    <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10">
-                      Schedule Demo
-                    </Button>
-                  }
-                />
-              </>
+              <Button 
+                size="lg" 
+                className="bg-gradient-ocean hover:shadow-ocean transition-all transform hover:scale-105 group"
+                onClick={() => navigate('/auth')}
+              >
+                Sign In to Access Platform
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
             )}
           </div>
         </div>
