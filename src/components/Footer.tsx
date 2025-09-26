@@ -1,9 +1,9 @@
 import blueInsightsLogo from "@/assets/blue-insights-logo.png";
 export const Footer = () => {
   return <footer className="bg-card border-t border-border/50">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container px-6 py-12 mx-[225px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
+          <div className="px-[45px]">
             <div className="flex items-center space-x-2 mb-4">
               <img src={blueInsightsLogo} alt="Blue-Insights" className="w-8 h-8 rounded-lg" />
               <span className="text-lg font-bold">Blue-Insights</span>
@@ -15,7 +15,7 @@ export const Footer = () => {
 
           
 
-          <div className="px-[130px]">
+          <div className="px-[95px]">
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm text-muted-foreground py-px">
               
