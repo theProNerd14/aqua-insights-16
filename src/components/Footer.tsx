@@ -31,7 +31,7 @@ export const Footer = () => {
               <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
               
               
-              <li><a href="#" className="hover:text-primary transition-colors">Newsletter</a></li>
+              
             </ul>
           </div>
         </div>
