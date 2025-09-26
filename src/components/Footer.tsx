@@ -17,8 +17,8 @@ export const Footer = () => {
 
           <div>
             <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
+            <ul className="space-y-2 text-sm text-muted-foreground py-px">
+              
               <li><a href="#" className="hover:text-primary transition-colors">Research Papers</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Case Studies</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
