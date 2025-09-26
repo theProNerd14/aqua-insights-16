@@ -15,7 +15,7 @@ export const Footer = () => {
 
           
 
-          <div className="px-[95px]">
+          <div className="px-[75px]">
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm text-muted-foreground py-px">
               
@@ -25,7 +25,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="px-0">
             <h3 className="font-semibold mb-4">Connect</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
@@ -37,7 +37,7 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground text-center mx-[500px]">© 2025 Blue-Insights
+          <p className="text-sm text-muted-foreground text-center mx-[360px]">© 2025 Blue-Insights
 Made with ❤️ in Pune, MH, India</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             
