@@ -29,8 +29,11 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/50 flex justify-center items-center">
-          <p className="text-sm text-muted-foreground text-center">© 2025 Blue-Insights
-Made with ❤️ in Pune, MH, India</p>
+          <p className="text-sm text-muted-foreground text-center">
+            © 2025 Blue-Insights
+            <br />
+            Made with ❤️ in Pune, MH, India
+          </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             
             
